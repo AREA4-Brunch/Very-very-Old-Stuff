@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/bassTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
+        android:text="Bass ???"
+        android:textColor="#03A9F4"
+        app:layout_constraintBottom_toTopOf="@+id/bassSeekBar"
+        app:layout_constraintStart_toStartOf="@+id/bassSeekBar"
+        app:layout_constraintTop_toBottomOf="@+id/powerOnBtn"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/playerVolumeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
+        android:text="Player Volume"
+        android:textColor="#03A9F4"
+        app:layout_constraintBottom_toTopOf="@+id/playerVolumeSeekBar"
+        app:layout_constraintStart_toStartOf="@+id/playerVolumeSeekBar"
+        app:layout_constraintTop_toBottomOf="@+id/bassSeekBar"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/pcVolumeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
+        android:text="PC Volume"
+        android:textColor="#03A9F4"
+        app:layout_constraintBottom_toTopOf="@+id/pcVolumeSeekBar"
+        app:layout_constraintStart_toStartOf="@+id/pcVolumeSeekBar"
+        app:layout_constraintTop_toBottomOf="@+id/playerVolumeSeekBar"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/muteBtn"
+        android:layout_width="62dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/ic_lock_silent_mode" />
+
+    <ImageButton
+        android:id="@+id/playPauseBtn"
+        android:layout_width="66dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="#00FFFFFF"
+        android:tint="#B0AFAF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nextBtn"
+        app:layout_constraintStart_toEndOf="@+id/previousBtn"
+        app:layout_constraintTop_toBottomOf="@+id/muteBtn"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+    <ImageButton
+        android:id="@+id/nextBtn"
+        android:layout_width="66dp"
+        android:layout_height="68dp"
+        android:background="#00FFFFFF"
+        android:tint="#B0AFAF"
+        app:layout_constraintBottom_toBottomOf="@+id/playPauseBtn"
+        app:layout_constraintEnd_toEndOf="@+id/bassSeekBar"
+        app:layout_constraintTop_toTopOf="@+id/playPauseBtn"
+        app:srcCompat="@android:drawable/ic_media_next" />
+
+    <ImageButton
+        android:id="@+id/previousBtn"
+        android:layout_width="65dp"
+        android:layout_height="68dp"
+        android:background="#00FFFFFF"
+        android:tint="#B0AFAF"
+        app:layout_constraintBottom_toBottomOf="@+id/playPauseBtn"
+        app:layout_constraintStart_toStartOf="@+id/bassSeekBar"
+        app:layout_constraintTop_toTopOf="@+id/playPauseBtn"
+        app:srcCompat="@android:drawable/ic_media_previous" />
+
+    <ImageButton
+        android:id="@+id/powerOnBtn"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/muteBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/muteBtn"
+        app:srcCompat="@drawable/ic_power_settings_new_black_24dp" />
+
+    <SeekBar
+        android:id="@+id/bassSeekBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="0dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_horizontal_white_line"
+        android:clickable="true"
+        android:fadeScrollbars="true"
+        android:max="17"
+        android:progress="0"
+        android:scrollbarSize="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/playerVolumeSeekBar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/playerVolumeSeekBar"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:tickMarkTint="#2196F3" />
+
+    <SeekBar
+        android:id="@+id/playerVolumeSeekBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="0dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_horizontal_white_line"
+        android:clickable="true"
+        android:fadeScrollbars="true"
+        android:max="10"
+        android:progress="8"
+        android:scrollbarSize="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/muteBtn"
+        app:layout_constraintStart_toStartOf="@+id/powerOnBtn"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:tickMarkTint="#2196F3" />
+
+    <SeekBar
+        android:id="@+id/pcVolumeSeekBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="0dp"
+        android:layout_height="28dp"
+        android:background="@drawable/ic_horizontal_white_line"
+        android:clickable="true"
+        android:fadeScrollbars="true"
+        android:max="16"
+        android:progress="7"
+        android:scrollbarSize="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/playerVolumeSeekBar"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/playerVolumeSeekBar"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:tickMarkTint="#2196F3" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.47" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.67" />
+
+</android.support.constraint.ConstraintLayout>
